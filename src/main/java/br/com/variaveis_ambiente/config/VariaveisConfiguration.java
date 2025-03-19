@@ -6,6 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "param.lucas")
 @Data
 public class VariaveisConfiguration {
+    private String aplicacao;
     private String nome;
     private String email;
     private String idade;
