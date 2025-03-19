@@ -20,6 +20,7 @@ public class VariaveisController {
         return ResponseEntity
                 .ok(DadosVariaveisDTO
                         .builder()
+                        .aplicacao(variaveisConfiguration.getAplicacao())
                         .nome(variaveisConfiguration.getNome())
                         .email(variaveisConfiguration.getEmail())
                         .idade(variaveisConfiguration.getIdade())

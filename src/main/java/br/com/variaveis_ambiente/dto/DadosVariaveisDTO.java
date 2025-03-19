@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class DadosVariaveisDTO {
+    private String aplicacao;
     private String nome;
     private String email;
     private String idade;
