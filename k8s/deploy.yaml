@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: variaveis
-        image: lucasbref82/variaveis-ambiente:v4
+        image: lucasbref82/variaveis-ambiente:v6
         ports:
         - containerPort: 80
         env:
@@ -43,16 +43,3 @@ spec:
               configMapKeyRef:
                 name: config-variaveis
                 key: LUCAS_IDADE
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: variaveis
-spec:
-  selector:
-    app: variaveis
-  ports:
-  - port: 80
-    targetPort: 80
-    nodePort: 30000
-  type: NodePort
