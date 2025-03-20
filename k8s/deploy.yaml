@@ -14,35 +14,12 @@ spec:
     spec:
       containers:
       - name: variaveis
-        image: lucasbref82/variaveis-ambiente:v4
+        image: lucasbref82/variaveis-ambiente:v7
         ports:
         - containerPort: 80
-        env:
-          - name: APP_NAME
-            valueFrom: 
-              configMapKeyRef:
-                name: config-variaveis
-                key: APP_NAME
-          - name: SERVER_PORT
-            valueFrom: 
-              configMapKeyRef:
-                name: config-variaveis
-                key: SERVER_PORT
-          - name: LUCAS_NOME
-            valueFrom: 
-              configMapKeyRef:
-                name: config-variaveis
-                key: LUCAS_NOME
-          - name: LUCAS_EMAIL
-            valueFrom: 
-              configMapKeyRef:
-                name: config-variaveis
-                key: LUCAS_EMAIL
-          - name: LUCAS_IDADE
-            valueFrom: 
-              configMapKeyRef:
-                name: config-variaveis
-                key: LUCAS_IDADE
+        envFrom:
+          - configMapRef:
+              name: config-variaveis
 ---
 apiVersion: v1
 kind: Service
