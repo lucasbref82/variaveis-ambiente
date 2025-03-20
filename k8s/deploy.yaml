@@ -14,22 +14,10 @@ spec:
     spec:
       containers:
       - name: variaveis
+
         image: lucasbref82/variaveis-ambiente:v7
         ports:
         - containerPort: 80
         envFrom:
           - configMapRef:
               name: config-variaveis
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: variaveis
-spec:
-  selector:
-    app: variaveis
-  ports:
-  - port: 80
-    targetPort: 80
-    nodePort: 30000
-  type: NodePort
